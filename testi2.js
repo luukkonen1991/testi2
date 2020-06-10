@@ -22,6 +22,7 @@ if (process.argv[2] && process.argv[3]) {
         users.push(invitedUser);
         hasInvited.push(invitor);
         console.log(`#${invitedUser.ID} created, which was invited by #${invitor.ID}`);
+        hasInvited = [...new Set(hasInvited)];
       }
     });
   }
@@ -29,3 +30,4 @@ if (process.argv[2] && process.argv[3]) {
   console.log(`Plese submit the following parameters 'nr_invites' and 'depth'`);
 }
 console.log('All users.amount', users.length);
+console.log(hasInvited);
